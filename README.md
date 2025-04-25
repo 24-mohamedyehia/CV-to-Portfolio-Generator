@@ -1,6 +1,9 @@
 # CV-to-Portfolio-Generator
 A project that uses AI Agents to automatically extract information from your CV and create a personalized portfolio website.
 
+## Web Application
+![image](./static/img/Screenshot%202025-04-25%20203613.png)
+
 ## Requirements
 - Python 3.10
 
@@ -29,3 +32,24 @@ $ pip install -r requirements.txt
 $ cp .env.example .env
 ```
 Set your environment variables in the .env file. Like GROQ_API_KEY value.
+
+You can get your Groq API key from [here](https://console.groq.com/keys).
+
+## Run the application
+```bash
+$ python app.py
+```
+
+## Access the application
+Open your browser and navigate to `http://127.0.0.1:5000`.
+
+To stop the application, press `Ctrl+C` in your terminal.
+
+## Features
+- Upload a CV in PDF format
+- Extract information from the CV using AI Agents
+- Generate a personalized portfolio website
+- Download the generated portfolio website
+
+## License
+The project is licensed under the Apache License

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CV to Portfolio Generator</title>
+        <link rel="stylesheet" href="./static/css/bootstrap.css">
+        <link rel="stylesheet" href="./static/css/main.css">
+    </head>
+<head>
+    
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand">Projects</a>
+            <a href="https://github.com/24-mohamedyehia/CV-to-Portfolio-Generator?tab=readme-ov-file" target="_blank" class="d-flex align-items-center text-black text-decoration-none">
+                <span>Source Code</span>
+                <img src="../static/img/github-logo.png" alt="GitHub" width="30" class="ms-4">
+            </a>
+            
+        </div>
+    </nav>
+
+    <!-- Project Name -->
+    <div class="container project-name my-3 mb-0 pb-0 ">
+        <h2 class="text-center my-3 text-primary">CV to Portfolio Generator</h2>
+        <p class="text-center">Convert your CV (PDF) to a personal and professional website with a single click! 👆<i></i></p>
+    </div>
+
+    <br>
+    <!-- Prediction Form -->
+    <div class="container my-1">
+        <form id="cvUploadForm" action="/" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="cvFile" class="form-label">Upload your CV (PDF only):</label>
+        <input class="form-control" type="file" id="cvFile" name="cv_file" accept="application/pdf" required>
+    </div>
+    <div class="d-flex justify-content-center my-4">
+        <button type="submit" class="btn btn-primary me-2 m-3">Convert Now</button>
+    </div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-warning">
+          {% for message in messages %}
+            <div>{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+</form>
+    </div>
+
+
+
+    <!-- Footer Section with White Background -->
+    <footer class="footer text-center bg-light text-dark pb-2 bt-0">
+        <div class="container">
+            <a href="https://www.linkedin.com/in/24-mohamed-yehia/" target="_blank"><img src="./static/img/linkedin.png" alt="Linkedin" width="25"></a>
+            <!-- my Email -->
+            <a target="_blank"><img src="../static/img/gmail.png" alt="Email" width="25"> mo.yehia.824@gmail.com</a>
+        </div>
+    </footer>
+    <script src="./static/js/bootstrap.js"></script>
+    <script src="./static/js/jquery-3.7.1.min.js"></script>
+    <script src="./static/js/popper.min.js"></script>
+    <script src="./static/js/main.js"></script>
+</body>
+</html>

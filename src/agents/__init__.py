@@ -1,14 +1,5 @@
 # agent/__init__.py
-from crewai import Agent , LLM
-import os
-from dotenv import load_dotenv
+from src.agents.cv_reader_agent import cv_reader, reader_task
+from src.agents.cv_analyzer_agent import cv_analyzer , analyze_task
+from src.agents.web_generator_agent import web_generator , website_task
 
-load_dotenv()
-groq_api_key = os.getenv("GROQ_API_KEY")
-
-
-basic_llm = LLM(
-    model="groq/llama-3.3-70b-versatile",
-    temperature=0,
-    api_key=groq_api_key
-)

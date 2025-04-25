@@ -1,0 +1,1 @@
+crewai[tools]==0.95.0

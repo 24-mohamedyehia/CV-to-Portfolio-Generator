@@ -1,1 +1,2 @@
 crewai[tools]==0.95.0
+flask==3.0.3

@@ -1,29 +1,19 @@
 # main.py
-from agents import cv_reader, cv_analyzer, web_generator
-from agents import reader_task, analyze_task, website_task
+from agents import reader_analyzer, json_extraction_task
 from crewai import Crew , Process
-import pdfplumber
-import os
-
-
-cv_text = read_pdf('./1727444550333.pdf')
-
-output_dir = "src/ai-agent-output"
-os.makedirs(output_dir, exist_ok=True)
-
 
 crew = Crew(
-agents=[cv_reader, 
-        cv_analyzer, 
-        web_generator],
+agents=[
+    reader_analyzer
+],
 
-tasks=[reader_task,
-        analyze_task,
-        website_task],
+tasks=[
+    json_extraction_task
+],
 
-process=Process.sequential
+process=Process.sequential  
 )
 
-crew_results = crew.kickoff(inputs={"cv_text": cv_text})
+cv_pdf = 'D:\my_laptob\Projects\CV-to-Portfolio-Generator\CV_ML_engnieers.pdf'
 
-crew_results
+crew_results = crew.kickoff(inputs={"cv_pdf": cv_pdf})

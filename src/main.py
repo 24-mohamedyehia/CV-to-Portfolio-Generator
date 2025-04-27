@@ -5,11 +5,6 @@ from crewai import Crew , Process
 import pdfplumber
 import os
 
-def read_pdf(file_path: str) -> str:
-    '''Read PDF file content'''
-    with pdfplumber.open(file_path) as pdf:
-        return "\\n".join([page.extract_text() for page in pdf.pages])
-
 
 cv_text = read_pdf('./1727444550333.pdf')
 

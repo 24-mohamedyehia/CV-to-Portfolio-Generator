@@ -3,10 +3,10 @@ from crewai import Agent, Task
 from crewai.tools import tool
 import pdfplumber
 import os
-from src.providers import basic_llm
+from src.providers import llama_3_3_70B_llm 
 from src.models import CVData
 
-# Define output directory
+# Define output directory   
 output_dir = "src/ai-agent-output"
 os.makedirs(output_dir, exist_ok=True)
 
@@ -25,9 +25,11 @@ reader_analyzer = Agent(
         "To provide a list of a JSON file with the extracted data from pdf file your read"
     ]),
     backstory= "You're an AI expert in reading CVs (PDF format) and converting them into organized JSON format, perfect for using in web generation.",
-    llm=  basic_llm,
     verbose= True,
-    tools= [read_pdf]
+    llm=llama_3_3_70B_llm,
+    tools= [read_pdf],
+    max_iter=2,
+    max_rpm=29
 )
 
 # Define Task for JSON data extraction

@@ -4,8 +4,6 @@ A project that uses AI Agents to automatically extract information from your CV 
 ## Screenshots
 ![image](./public/Screenshot%202025-04-25%20203613.png)
 
-## Demo
-<video src="./public/Demo.mp4" controls></video>
 
 ## Requirements
 - Python 3.11

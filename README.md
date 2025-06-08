@@ -7,6 +7,7 @@ A project that uses AI Agents to automatically extract information from your CV 
 ## Demo
 <video width="600" controls>
     <source src="./public/Demo.mp4" type="video/mp4">
+     Your browser does not support the video tag.
 </video>
 
 ## Requirements

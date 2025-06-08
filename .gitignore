@@ -7,6 +7,8 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+ai-agent-output/
+uploads/
 .Python
 build/
 develop-eggs/

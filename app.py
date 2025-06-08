@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, send_file, redirect, flash
-import os
 from werkzeug.utils import secure_filename
-from src.agents import reader_analyzer, html_generator 
-from src.agents import json_extraction_task , html_generator_task
+from src.agents import html_generator ,html_generator_task
 from crewai import Crew, Process
+from utils import clean_output
+import os
 
 UPLOAD_FOLDER = 'uploads'
 OUTPUT_FOLDER = 'src/ai-agent-output'
@@ -33,16 +33,19 @@ def index():
             filename = secure_filename(file.filename)
             file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(file_path)
+            
             crew = Crew(
-                agents=[reader_analyzer, html_generator],
-                tasks=[json_extraction_task, html_generator_task],
-                process=Process.sequential
+                agents=[html_generator],
+                tasks=[html_generator_task],
+                process=Process.sequential,
+                verbose=True
             )
             cv_text = file_path
-            cv_json = './src/ai-agent-output/step_1_cv_data.json'
-            crew.kickoff(inputs={"cv_pdf": cv_text, "cv_json": cv_json})
+            crew.kickoff(inputs={"cv_pdf": cv_text})
             # Get the result HTML file
             result_html = os.path.join(OUTPUT_FOLDER, 'final_portfolio.html')
+            clean_output(result_html)  # Clean the output file
+
             if os.path.exists(result_html):
                 return render_template('result.html', website_file='final_portfolio.html')
             else:

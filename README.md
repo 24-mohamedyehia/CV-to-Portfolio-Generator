@@ -1,18 +1,23 @@
 # CV-to-Portfolio-Generator
 A project that uses AI Agents to automatically extract information from your CV and create a personalized portfolio website.
 
-## Web Application
-![image](./static/img/Screenshot%202025-04-25%20203613.png)
+## Screenshots
+![image](./public/Screenshot%202025-04-25%20203613.png)
+
+## Demo
+<video width="600" controls>
+    <source src="./public/Demo.mp4" type="video/mp4">
+</video>
 
 ## Requirements
-- Python 3.10
+- Python 3.11
 
 ### Install Python Using Miniconda
 1- Download and install MiniConda from [here](https://www.anaconda.com/docs/getting-started/miniconda/main#quick-command-line-install)
 
 2- Create a new environment using the following command:
 ```bash
-$ conda create --name cv_to_Protfolio_generator python=3.10 -y
+$ conda create --name cv_to_Protfolio_generator python=3.11 -y
 ```
 
 3- Activate the environment:
@@ -31,9 +36,9 @@ $ pip install -r requirements.txt
 ```bash
 $ cp .env.example .env
 ```
-Set your environment variables in the .env file. Like GROQ_API_KEY value.
+Set your environment variables in the .env file. Like OPEN_ROUTER_API_KEY value.
 
-You can get your Groq API key from [here](https://console.groq.com/keys).
+You can get your Open Router API key from [here](https://openrouter.ai/settings/keys).
 
 ## Run the application
 ```bash
@@ -52,4 +57,4 @@ To stop the application, press `Ctrl+C` in your terminal.
 - Download the generated portfolio website
 
 ## License
-The project is licensed under the Apache License
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
